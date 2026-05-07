@@ -6,9 +6,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.tmluxcode.entity.LxPostCity;
+import org.tmluxcode.entity.LxPostCountry;
 import org.tmluxcode.exception.ResourceNotFoundException;
 import org.tmluxcode.repository.LxPostCityRepository;
 import org.tmluxcode.repository.LxPostCountryRepository;
+import org.tmluxcode.request.LxPostCityAddRequest;
 import org.tmluxcode.response.LxPostCityResponse;
 
 @Service
@@ -19,6 +21,25 @@ public class LxPostCityServiceImpl implements LxPostCityService {
     private final LxPostCityRepository lxPostCityRepository;
     private final LxPostCountryRepository lxPostCountryRepository;
 
+    @Override
+    public LxPostCityResponse createCity(LxPostCityAddRequest request) {
+
+        LxPostCountry country = lxPostCountryRepository.findById(request.getCountryId())
+                .orElseThrow(() ->
+                        new ResourceNotFoundException("Country not found with id: " + request.getCountryId())
+                );
+
+        LxPostCity lxPostCity = LxPostCity.builder()
+                .name(request.getName())
+                .population(request.getPopulation())
+                .zipCode(request.getZipCode())
+                .description(request.getDescription())
+                .country(country)
+                .build();
+
+        LxPostCity saved = lxPostCityRepository.save(lxPostCity);
+        return mapToResponse(saved);
+    }
 
     @Override
     public LxPostCityResponse getCityByCityId(Long cityId) {
@@ -55,7 +76,4 @@ public class LxPostCityServiceImpl implements LxPostCityService {
                 .description(city.getDescription())
                 .build();
     }
-
-
-
 }
