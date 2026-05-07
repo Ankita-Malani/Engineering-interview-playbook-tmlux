@@ -34,7 +34,7 @@ public class LxPostCityServiceImpl implements LxPostCityService {
     @Override
     public Page<LxPostCityResponse> getCitiesByCountry(Long countryId, Pageable pageable) {
         validateCountry(countryId);
-        return lxPostCityRepository.findByCountryId(countryId, pageable)
+        return lxPostCityRepository.findByCountry_Id(countryId, pageable)
                 .map(this::mapToResponse);
     }
 

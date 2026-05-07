@@ -37,7 +37,7 @@ public class LxPostCity {
 
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "country_id")
     private LxPostCountry country;
 }
