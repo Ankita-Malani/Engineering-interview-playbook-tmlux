@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: tmlux-code
+server:
+  port: 8080
