@@ -2,8 +2,9 @@ package org.tmluxcode.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.tmluxcode.entity.LxPostCountry;
 
-@Repository
-@Slf4j
-public class LxPostCountryRepository {
+public interface LxPostCountryRepository extends JpaRepository<LxPostCountry, Long> {
+
 }
