@@ -12,6 +12,7 @@ public class LxPostCityResponse {
     private Long id;
     private String name;
     private Long countryId;
+    private String countryName;
     private Long population;
     private String zipCode;
     private String description;
