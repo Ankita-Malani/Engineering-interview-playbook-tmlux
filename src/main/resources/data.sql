@@ -1,22 +1,10 @@
-INSERT INTO countries (id, name)
-VALUES (1, 'Lithuania');
-
-INSERT INTO countries (id, name)
-VALUES (2, 'Germany');
-
-INSERT INTO countries (id, name)
-VALUES (3, 'France');
-
-INSERT INTO countries (id, name)
-VALUES (4, 'Luxumbourg');
-
-INSERT INTO countries (id, name)
-VALUES (5, 'Netherlands');
-
-
+INSERT INTO countries (name) VALUES ('Lithuania');
+INSERT INTO countries (name) VALUES ('Germany');
+INSERT INTO countries (name) VALUES ('France');
+INSERT INTO countries (name) VALUES ('Luxumbourg');
+INSERT INTO countries (name) VALUES ('Netherlands');
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -24,7 +12,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           1,
            'Vilnius',
            580000,
            'LT-01100',
@@ -33,7 +20,6 @@ VALUES (
        );
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -41,7 +27,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           2,
            'Kaunas',
            300000,
            'LT-44000',
@@ -50,7 +35,6 @@ VALUES (
        );
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -58,7 +42,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           3,
            'Berlin',
            3600000,
            '10115',
@@ -67,7 +50,6 @@ VALUES (
        );
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -75,7 +57,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           4,
            'Paris',
            2100000,
            '75000',
@@ -84,7 +65,6 @@ VALUES (
        );
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -92,7 +72,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           5,
            'Luxembourg City',
            250000,
            '05463',
@@ -101,7 +80,6 @@ VALUES (
        );
 
 INSERT INTO cities (
-    id,
     name,
     population,
     zip_code,
@@ -109,7 +87,6 @@ INSERT INTO cities (
     country_id
 )
 VALUES (
-           6,
            'Amsterdam',
            3600000,
            '10915',
