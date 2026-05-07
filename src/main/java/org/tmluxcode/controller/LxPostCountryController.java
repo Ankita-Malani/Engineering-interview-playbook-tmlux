@@ -22,7 +22,7 @@ public class LxPostCountryController {
         return lxPostCountryService.getAllCountries();
     }
 
-    @PostMapping
+    @PostMapping ("/addCountries")
     @Operation(summary = "Create a new country")
     public LxPostCountryResponse createCountry(@RequestBody @Valid LxPostCountryAddRequest request) {
         return lxPostCountryService.createCountry(request);
