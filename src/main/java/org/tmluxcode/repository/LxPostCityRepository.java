@@ -1,10 +1,10 @@
 package org.tmluxcode.repository;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.tmluxcode.entity.LxPostCity;
 
-@Repository
-@Slf4j
-public class LxPostCityRepository {
-
+public interface LxPostCityRepository extends JpaRepository<LxPostCity, Long> {
+    Page<LxPostCity> findByCountryId(Long countryId, Pageable pageable);
 }
